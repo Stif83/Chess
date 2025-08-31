@@ -68,7 +68,7 @@ class ChessGUI:
                 self.possible_moves = []
 
                 if self.game.game_over:
-                    winner = "Blancs" if self.game.current_player == "W" else "Noirs"
+                    winner = "Noirs" if self.game.current_player == "W" else "Blancs"
                     messagebox.showinfo("Jeu terminé", f"Les {winner} ont gagné!")
             else:
                 piece = self.game.board.piece(dest)
