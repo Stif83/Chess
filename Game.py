@@ -35,7 +35,7 @@ class Game:
 
 
     def can_castle_kingside(self, color):
-        if not self.board.castling_rights[color]["k"]:
+        if not self.board.castling_rights[color]["K"]:
             return False
 
         row = 7 if color == "W" else 0
@@ -122,7 +122,7 @@ class Game:
         if not piece or piece.color != self.current_player:
             return False
 
-        if piece.kind =="k":
+        if piece.kind =="K":
             king_row = 7 if piece.color == "W" else 0
             if src == (king_row,4):
                 if dest == (king_row, 6) and self.can_castle_kingside(piece.color):
@@ -178,9 +178,7 @@ class Game:
 
 
         self.update_castling_right(src)
-
-        self.board.grid[dest[0]][dest[1]] = piece
-        self.board.grid[src[0]][src[1]] = None
+        self.board.mouv(src, dest)
 
         self.move_history.append((src,dest,piece))
 

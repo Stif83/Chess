@@ -79,6 +79,7 @@ class ChessGUI:
                     self.cancel_selection()
         self.draw_board()
 
+
     def cancel_selection(self, event=None):
             self.selected = None
             self.possible_moves = []

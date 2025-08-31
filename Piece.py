@@ -122,7 +122,7 @@ class Piece:
         for dr,dc in direction:
             new_pos = (r + dr, c +dc)
             if not board.inside(new_pos):
-                break
+                continue
             target = board.piece(new_pos)
             if target is None or target.color != self.color:
                 moves.append(new_pos)
